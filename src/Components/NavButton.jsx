@@ -35,7 +35,7 @@ const NavButton = () => {
 
   const handleNextButton = () => {
     if (stepperNo === 1) {
-      if(!Object.values(userdetails).every((item) => item)){
+      if (!Object.values(userdetails).every((item) => item)) {
         return alert('Please provide all the required information');
       }
     }
@@ -43,12 +43,12 @@ const NavButton = () => {
       return alert('Please select any one guest room');
     }
     if (stepperNo !== 0 || stepperNo !== 3) {
-      dispatch(updateStepperNo(stepperNo + 1));
+      return dispatch(updateStepperNo(stepperNo + 1));
     }
   };
 
   const handleBackButton = () => {
-    console.log(stepperNo);
+    // console.log(stepperNo);
     if (stepperNo !== 0 || stepperNo !== 3) {
       dispatch(updateStepperNo(stepperNo - 1));
     }

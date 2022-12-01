@@ -272,8 +272,8 @@ const Admin = () => {
                   <td>{phone}</td>
                   <td>{adults}</td>
                   <td>{children}</td>
-                  <td>{checkin}</td>
-                  <td>{checkout}</td>
+                  <td>{checkin.split("T")}</td>
+                  <td>{checkout.split("T")}</td>
                   <td>{room}</td>
                 </tr>
               )

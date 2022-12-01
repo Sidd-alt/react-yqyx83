@@ -1,13 +1,32 @@
 import React, { useState } from 'react';
 import Admin from '../Pages/Admin/Admin.jsx';
 import User from '../Pages/User/User.jsx';
+import { useDispatch } from 'react-redux';
+import {
+  updateStepperNo,
+  updateuserdetails,
+} from '../Redux-Slice/userInfoSlice.js';
 
 const Route = () => {
   const [currentUserType, setcurrentUserType] = useState('user');
+  const dispatch = useDispatch();
 
   const handleUserPage = () => {
     if (currentUserType === 'user') {
+      dispatch(updateStepperNo(1));
       setcurrentUserType('admin');
+      dispatch(
+        updateuserdetails({
+          name: '',
+          email: '',
+          phone: '',
+          adults: '',
+          children: '',
+          checkin: '',
+          checkout: '',
+          room: 'Single room',
+        })
+      );
       document.body.style.backgroundColor = 'rgb(12 9 47)';
     } else if (currentUserType === 'admin') {
       setcurrentUserType('user');
