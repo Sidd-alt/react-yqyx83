@@ -9,7 +9,7 @@ const initialState = {
     children: '',
     checkin: '',
     checkout: '',
-    room: '',
+    room: 'Single room',
   },
   stepperNo: 1,
   roomSelected: '',

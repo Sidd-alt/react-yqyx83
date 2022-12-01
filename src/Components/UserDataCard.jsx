@@ -6,7 +6,7 @@ const UserDataCard = ({ data }) => {
   return (
     <>
       <div id="user-card-wrapper">
-        <p>{name}</p>
+        <p style={{fontSize: '30px'}}>{'nSiddame'}</p>
         <p>{email}</p>
         <p>{phone}</p>
         <div

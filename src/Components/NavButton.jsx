@@ -21,21 +21,27 @@ const NavButton = () => {
       checkin: '',
       checkout: '',
     };
-    let tempArr = userlist.slice();
-    tempArr.push(userdetails);
-    dispatch(updateUserList(tempArr));
     dispatch(updateuserdetails(obj));
     dispatch(updateStepperNo(1));
   };
 
   useEffect(() => {
-    // if (stepperNo === 3) {
-    //   setTimeout(clearInformation, 3000);
-    // }
+    if (stepperNo === 3) {
+      let tempArr = userlist.slice();
+      tempArr.push(userdetails);
+      dispatch(updateUserList(tempArr));
+    }
   }, [stepperNo]);
 
   const handleNextButton = () => {
-    console.log(userdetails);
+    if (stepperNo === 1) {
+      if(!Object.values(userdetails).every((item) => item)){
+        return alert('Please provide all the required information');
+      }
+    }
+    if (stepperNo === 2 && !userdetails.room) {
+      return alert('Please select any one guest room');
+    }
     if (stepperNo !== 0 || stepperNo !== 3) {
       dispatch(updateStepperNo(stepperNo + 1));
     }
@@ -50,12 +56,16 @@ const NavButton = () => {
 
   return (
     <div id="button-wrapper">
-      {stepperNo === 1 ? null : (
+      {stepperNo === 2 && (
         <button className="button-back" onClick={handleBackButton}>
           <span>BACK</span>
         </button>
       )}
-      {stepperNo === 3 ? null : (
+      {stepperNo === 3 ? (
+        <button className="button-next-new-user" onClick={clearInformation}>
+          <span>ENTER NEW USER INFORMATION</span>
+        </button>
+      ) : (
         <button className="button-next" onClick={handleNextButton}>
           <span>NEXT</span>
         </button>
