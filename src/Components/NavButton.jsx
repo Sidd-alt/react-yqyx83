@@ -29,9 +29,9 @@ const NavButton = () => {
   };
 
   useEffect(() => {
-    if (stepperNo === 3) {
-      setTimeout(clearInformation, 3000);
-    }
+    // if (stepperNo === 3) {
+    //   setTimeout(clearInformation, 3000);
+    // }
   }, [stepperNo]);
 
   const handleNextButton = () => {
@@ -51,10 +51,14 @@ const NavButton = () => {
   return (
     <div id="button-wrapper">
       {stepperNo === 1 ? null : (
-        <button onClick={handleBackButton}>Back</button>
+        <button className="button-back" onClick={handleBackButton}>
+          <span>BACK</span>
+        </button>
       )}
       {stepperNo === 3 ? null : (
-        <button onClick={handleNextButton}>Next</button>
+        <button className="button-next" onClick={handleNextButton}>
+          <span>NEXT</span>
+        </button>
       )}
     </div>
   );

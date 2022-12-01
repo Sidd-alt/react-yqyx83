@@ -5,8 +5,14 @@ const RoomSelection = () => {
   return (
     <>
       <div id="card-wrapper">
-        {[1, 2, 3, 4, 5].map((roomNo) => (
-          <Cards roomNo={roomNo} />
+        {[
+          'Single room',
+          'Double room',
+          'Suites',
+          'Deluxe room',
+          'Presedential',
+        ].map((roomNo) => (
+          <Cards key={roomNo} roomNo={roomNo} />
         ))}
       </div>
     </>

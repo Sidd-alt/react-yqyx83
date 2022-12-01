@@ -49,33 +49,33 @@ const UserInfoPage = () => {
           />
         </div>
 
-        <div className="person-count-wrapper">
-          <div className="input-wrapper">
-            <label className="label-field">Adults</label>
-            <input
-              name="adults"
-              value={adults}
-              type="number"
-              className="input-field-2"
-              onChange={onChangeHandler}
-            />
-          </div>
-
-          <div className="input-wrapper">
-            <label className="label-field">Children</label>
-            <input
-              name="children"
-              value={children}
-              type="number"
-              className="input-field-2"
-              onChange={onChangeHandler}
-            />
-          </div>
+        {/* <div className="person-count-wrapper"> */}
+        <div className="input-wrapper">
+          <label className="label-field">Adults</label>
+          <input
+            name="adults"
+            value={adults}
+            type="number"
+            className="input-field"
+            onChange={onChangeHandler}
+          />
         </div>
+
+        <div className="input-wrapper">
+          <label className="label-field">Children</label>
+          <input
+            name="children"
+            value={children}
+            type="number"
+            className="input-field"
+            onChange={onChangeHandler}
+          />
+        </div>
+        {/* </div> */}
 
         {/* <div className="person-count-wrapper"> */}
         <div className="input-wrapper">
-          <label className="label-field">Check-IN</label>
+          <label className="label-field">Check-in</label>
           <input
             name="checkin"
             value={checkin}
@@ -86,7 +86,7 @@ const UserInfoPage = () => {
         </div>
 
         <div className="input-wrapper">
-          <label className="label-field">Check-OUT</label>
+          <label className="label-field">Check-out</label>
           <input
             name="checkout"
             value={checkout}

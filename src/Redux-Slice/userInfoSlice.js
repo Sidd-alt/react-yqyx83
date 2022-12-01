@@ -12,6 +12,7 @@ const initialState = {
     room: '',
   },
   stepperNo: 1,
+  roomSelected: '',
 };
 
 export const userInfoSlice = createSlice({
@@ -24,10 +25,14 @@ export const userInfoSlice = createSlice({
     updateuserdetails: (state, { payload }) => {
       state.userdetails = payload;
     },
+    setroomSelected: (state, { payload }) => {
+      state.roomSelected = payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { updateStepperNo, updateuserdetails } = userInfoSlice.actions;
+export const { updateStepperNo, updateuserdetails, setroomSelected } =
+  userInfoSlice.actions;
 
 export default userInfoSlice.reducer;
